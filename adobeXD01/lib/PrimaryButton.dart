@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/size_extension.dart';
 
 class PrimaryButton extends StatelessWidget {
   PrimaryButton({
@@ -9,11 +10,11 @@ class PrimaryButton extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          width: 180.0,
-          height: 60.0,
+          width: 180.0.w,
+          height: 60.0.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(60.0),
+              topLeft: Radius.circular(60.0.w),
             ),
             color: const Color(0xffffffff),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/size_extension.dart';
 
 class InputLabel extends StatelessWidget {
   InputLabel({
@@ -10,7 +11,7 @@ class InputLabel extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Transform.translate(
-          offset: Offset(1.0, 58.0),
+          offset: Offset(1.0.w, 58.0.h),
           child:
               // Adobe XD layer: 'text_path' (shape)
               SvgPicture.string(
@@ -19,17 +20,17 @@ class InputLabel extends StatelessWidget {
           ),
         ),
         Transform.translate(
-          offset: Offset(0.0, 24.0),
+          offset: Offset(0.0.w, 24.0.h),
           child:
               // Adobe XD layer: 'input_text' (text)
               Text(
             'prakaship78@gmail.com',
             style: TextStyle(
               fontFamily: 'Futura',
-              fontSize: 20,
+              fontSize: 20.sp,
               color: const Color(0xbcf7f2f2),
               fontWeight: FontWeight.w500,
-              height: 1.2,
+              height: 1.2.h,
             ),
             textAlign: TextAlign.left,
           ),
@@ -39,7 +40,7 @@ class InputLabel extends StatelessWidget {
           'Email:',
           style: TextStyle(
             fontFamily: 'Futura',
-            fontSize: 20,
+            fontSize: 20.sp,
             color: const Color(0xffffffff),
             fontWeight: FontWeight.w500,
           ),

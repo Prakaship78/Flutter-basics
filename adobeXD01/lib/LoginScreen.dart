@@ -3,6 +3,8 @@ import './Logo.dart';
 import './InputForm.dart';
 import './PrimaryButton.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/size_extension.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({
@@ -10,23 +12,24 @@ class LoginScreen extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 375, height: 812);
     return Scaffold(
       backgroundColor: const Color(0xff070708),
       body: Stack(
         children: <Widget>[
           Transform.translate(
-            offset: Offset(137.0, 40.0),
+            offset: Offset(137.0.w, 40.0.w),
             child:
                 // Adobe XD layer: 'Logo' (component)
                 Logo(),
           ),
           Transform.translate(
-            offset: Offset(85.0, 93.0),
+            offset: Offset(85.0.w, 93.0.w),
             child:
                 // Adobe XD layer: 'boy' (shape)
                 Container(
-              width: 206.0,
-              height: 350.6,
+              width: 206.0.w,
+              height: 350.6.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: const AssetImage("assets/peeps.png"),
@@ -36,24 +39,24 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(16.0, 488.0),
+            offset: Offset(16.0.w, 488.0.h),
             child:
                 // Adobe XD layer: 'InputForm' (component)
                 InputForm(),
           ),
           Transform.translate(
-            offset: Offset(195.0, 752.0),
+            offset: Offset(195.0.w, 752.0.h),
             child:
                 // Adobe XD layer: 'PrimaryButton' (component)
                 PrimaryButton(),
           ),
           Transform.translate(
-            offset: Offset(248.0, 767.0),
+            offset: Offset(248.0.w, 767.0.h),
             child: Text(
               'Sign In',
               style: TextStyle(
                 fontFamily: 'Futura',
-                fontSize: 24,
+                fontSize: 24.sp,
                 color: const Color(0xff000000),
                 fontWeight: FontWeight.w500,
               ),
@@ -61,7 +64,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: Offset(18.0, 790.0),
+            offset: Offset(18.0.w, 790.0.h),
             child: SvgPicture.string(
               _svg_l9x9yt,
               allowDrawingOutsideViewBox: true,
