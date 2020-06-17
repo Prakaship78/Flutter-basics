@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/size_extension.dart';
 
 class PrimaryButton extends StatelessWidget {
   PrimaryButton({
@@ -10,13 +9,26 @@ class PrimaryButton extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
-          width: 180.0.w,
-          height: 60.0.h,
+          width: 180.0,
+          height: 60.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(60.0.w),
+              topLeft: Radius.circular(60.0),
             ),
             color: const Color(0xffffffff),
+          ),
+        ),
+        Transform.translate(
+          offset: Offset(53.0, 15.0),
+          child: Text(
+            'Sign In',
+            style: TextStyle(
+              fontFamily: 'Futura',
+              fontSize: 24,
+              color: const Color(0xff000000),
+              fontWeight: FontWeight.w500,
+            ),
+            textAlign: TextAlign.left,
           ),
         ),
       ],

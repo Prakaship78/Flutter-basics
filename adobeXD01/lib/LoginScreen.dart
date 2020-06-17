@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import './Logo.dart';
 import './InputForm.dart';
+import 'package:adobe_xd/page_link.dart';
 import './PrimaryButton.dart';
+import './CourcesScreen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_screenutil/size_extension.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({
@@ -12,59 +12,55 @@ class LoginScreen extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 375, height: 812);
     return Scaffold(
-      backgroundColor: const Color(0xff070708),
+      backgroundColor: const Color(0xff212226),
       body: Stack(
         children: <Widget>[
           Transform.translate(
-            offset: Offset(137.0.w, 40.0.w),
+            offset: Offset(137.0, 40.0),
             child:
                 // Adobe XD layer: 'Logo' (component)
                 Logo(),
           ),
           Transform.translate(
-            offset: Offset(85.0.w, 93.0.w),
+            offset: Offset(85.0, 93.0),
             child:
                 // Adobe XD layer: 'boy' (shape)
                 Container(
-              width: 206.0.w,
-              height: 350.6.h,
+              width: 206.0,
+              height: 350.6,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: const AssetImage("assets/peeps.png"),
+                  image: const AssetImage(''),
                   fit: BoxFit.fill,
                 ),
               ),
             ),
           ),
           Transform.translate(
-            offset: Offset(16.0.w, 488.0.h),
+            offset: Offset(16.0, 488.0),
             child:
                 // Adobe XD layer: 'InputForm' (component)
                 InputForm(),
           ),
           Transform.translate(
-            offset: Offset(195.0.w, 752.0.h),
-            child:
-                // Adobe XD layer: 'PrimaryButton' (component)
-                PrimaryButton(),
-          ),
-          Transform.translate(
-            offset: Offset(248.0.w, 767.0.h),
-            child: Text(
-              'Sign In',
-              style: TextStyle(
-                fontFamily: 'Futura',
-                fontSize: 24.sp,
-                color: const Color(0xff000000),
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.left,
+            offset: Offset(195.0, 752.0),
+            child: PageLink(
+              links: [
+                PageLinkInfo(
+                  transition: LinkTransition.SlideRight,
+                  ease: Curves.easeOut,
+                  duration: 0.3,
+                  pageBuilder: () => CourcesScreen(),
+                ),
+              ],
+              child:
+                  // Adobe XD layer: 'PrimaryButton' (component)
+                  PrimaryButton(),
             ),
           ),
           Transform.translate(
-            offset: Offset(18.0.w, 790.0.h),
+            offset: Offset(18.0, 790.0),
             child: SvgPicture.string(
               _svg_l9x9yt,
               allowDrawingOutsideViewBox: true,

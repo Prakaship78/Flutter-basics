@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/size_extension.dart';
 
 class Logo extends StatelessWidget {
   Logo({
@@ -13,19 +12,19 @@ class Logo extends StatelessWidget {
           'C',
           style: TextStyle(
             fontFamily: 'Futura',
-            fontSize: 32.sp,
+            fontSize: 32,
             color: const Color(0xfff4b000),
             fontWeight: FontWeight.w500,
           ),
           textAlign: TextAlign.left,
         ),
         Transform.translate(
-          offset: Offset(20.0.w, 4.0.h),
+          offset: Offset(20.0, 4.0),
           child: Text(
             'ourses',
             style: TextStyle(
               fontFamily: 'Futura',
-              fontSize: 28.sp,
+              fontSize: 28,
               color: const Color(0xffffffff),
               fontWeight: FontWeight.w500,
             ),
