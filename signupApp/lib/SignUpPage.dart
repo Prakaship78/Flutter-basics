@@ -11,7 +11,7 @@ class _SignUpPageState extends State<SignUpPage> {
   GlobalKey<FormState> _key = GlobalKey();
   bool _autovalidate = false;
 
-  String name, email, mobile, college;
+  String name, password, email, mobile, college;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +45,21 @@ class _SignUpPageState extends State<SignUpPage> {
                     },
                     decoration: InputDecoration(labelText: 'Name'),
                     onSaved: (input) => name = input,
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.account_balance_wallet),
+                  title: TextFormField(
+                    validator: (input) {
+                      if (input.isEmpty) {
+                        return 'Enter Password';
+                      }
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                    ),
+                    onSaved: (input) => password = input,
+                    obscureText: true,
                   ),
                 ),
                 ListTile(
@@ -122,6 +137,7 @@ class _SignUpPageState extends State<SignUpPage> {
           MaterialPageRoute(
               builder: (context) => HomePage(
                     name: name,
+                    password: password,
                     email: email,
                     mobile: mobile,
                     college: college,

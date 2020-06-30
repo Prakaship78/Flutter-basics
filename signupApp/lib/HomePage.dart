@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  final String name, email, mobile, college;
+  final String name, password, email, mobile, college;
 
   HomePage(
-      {Key key, @required this.name, this.email, this.mobile, this.college})
+      {Key key,
+      @required this.name,
+      this.password,
+      this.email,
+      this.mobile,
+      this.college})
       : super(key: key);
 
   @override
@@ -28,6 +33,10 @@ class HomePage extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.person),
                 title: Text(name),
+              ),
+              ListTile(
+                leading: Icon(Icons.account_balance_wallet),
+                title: Text(password),
               ),
               ListTile(
                 leading: Icon(Icons.email),
